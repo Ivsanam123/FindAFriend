@@ -3,74 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard - Find A Friend</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
-    <style>
-        /* Background color for the page */
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: royalblue;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        /* Centered white box */
-        .dashboard-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            width: 300px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        /* Heading style */
-        .dashboard-container h1 {
-            margin-top: 0;
-            font-size: 24px;
-            font-weight: 700;
-            color: royalblue;
-        }
-
-        /* Button styling */
-        .nav-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            font-size: 16px;
-            color: white;
-            background-color: royalblue;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .nav-btn:hover {
-            background-color: #1a1aff;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Centered White Box with Buttons -->
-    <div class="dashboard-container">
-        <h1>Dashboard</h1>
-        <button onclick="navigateTo('questionnaire.html')" class="nav-btn">Questionnaire</button>
-        <button onclick="navigateTo('chat-groups.html')" class="nav-btn">Chat Group</button>
-        <button onclick="signOut()" class="nav-btn">Sign Out</button>
-        <button onclick="navigateTo('credits.html')" class="nav-btn">Credits</button>
+    <div class="container">
+        <div class="dashboard-box">
+            <h1>Dashboard</h1>
+            <div class="button-container">
+                <button class="dashboard-btn" onclick="location.href='questionnaire.html'">Questionnaire</button>
+                <button class="dashboard-btn" onclick="location.href='chat-groups.html'">Chat Groups</button>
+                <button class="dashboard-btn" id="signOutBtn">Sign Out</button>
+                <button class="dashboard-btn" onclick="location.href='credits.html'">Credits</button>
+            </div>
+        </div>
     </div>
-
-    <script>
-        // Navigation function for each page
-        function navigateTo(page) {
-            window.location.href = page;
-        }
-
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
         // Sign out function
         function signOut() {
             window.location.href = 'index.html'; // Redirect to the signout page

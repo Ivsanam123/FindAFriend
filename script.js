@@ -12,11 +12,19 @@ window.onload = function () {
         client_id: '438702058106-br97sspq1g1vp81sk8h8hpk99f49t91c.apps.googleusercontent.com', // Provided Google Client ID
         callback: handleCredentialResponse,
         auto_select: false,
-        cancel_on_tap_outside: true
+        cancel_on_tap_outside: true,
+        context: 'signin'
     });
     google.accounts.id.renderButton(
         document.getElementById("googleBtn"),
-        { theme: "outline", size: "large" }
+        { 
+            theme: "filled_blue",
+            size: "large",
+            width: 250,
+            shape: "rectangular",
+            text: "continue_with",
+            logo_alignment: "left"
+        }
     );
 
     // Check if user is already logged in
@@ -30,7 +38,10 @@ window.onload = function () {
 
 // Add click event listener to custom button
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('googleBtn').addEventListener('click', function() {
-        google.accounts.id.prompt();
-    });
+    const googleBtn = document.getElementById('googleBtn');
+    if (googleBtn) {
+        googleBtn.addEventListener('click', function() {
+            google.accounts.id.prompt();
+        });
+    }
 });

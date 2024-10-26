@@ -3,23 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Find A Friend</title>
+    <title>Questionnaire - ACM-W</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
     <div class="container">
-        <div class="dashboard-box">
-            <h1>Dashboard</h1>
-            <div class="button-container">
-                <button class="dashboard-btn" onclick="location.href='questionnaire.html'">Questionnaire</button>
-                <button class="dashboard-btn" onclick="location.href='chat-groups.html'">Chat Groups</button>
-                <button class="dashboard-btn" id="signOutBtn">Sign Out</button>
-                <button class="dashboard-btn" onclick="location.href='credits.html'">Credits</button>
-            </div>
+        <div class="questionnaire-box">
+            <h1>Questionnaire</h1>
+            <form id="questionnaireForm">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <input type="text" id="department" name="department" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="year">Year of Study:</label>
+                    <select id="year" name="year" required>
+                        <option value="">Select Year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interests (Select all that apply):</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="coding"> Coding</label>
+                        <label><input type="checkbox" name="interests" value="design"> Design</label>
+                        <label><input type="checkbox" name="interests" value="ai"> AI/ML</label>
+                        <label><input type="checkbox" name="interests" value="cybersecurity"> Cybersecurity</label>
+                        <label><input type="checkbox" name="interests" value="webdev"> Web Development</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="about">About Yourself:</label>
+                    <textarea id="about" name="about" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
         </div>
     </div>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="dashboard.js"></script>
 </body>
 </html>

@@ -3,56 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionnaire - ACM-W</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <div class="container">
-        <div class="questionnaire-box">
-            <h1>Questionnaire</h1>
-            <form id="questionnaireForm">
-                <div class="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="department">Department:</label>
-                    <input type="text" id="department" name="department" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="year">Year of Study:</label>
-                    <select id="year" name="year" required>
-                        <option value="">Select Year</option>
-                        <option value="1">1st Year</option>
-                        <option value="2">2nd Year</option>
-                        <option value="3">3rd Year</option>
-                        <option value="4">4th Year</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Interests (Select all that apply):</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="interests" value="coding"> Coding</label>
-                        <label><input type="checkbox" name="interests" value="design"> Design</label>
-                        <label><input type="checkbox" name="interests" value="ai"> AI/ML</label>
-                        <label><input type="checkbox" name="interests" value="cybersecurity"> Cybersecurity</label>
-                        <label><input type="checkbox" name="interests" value="webdev"> Web Development</label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="about">About Yourself:</label>
-                    <textarea id="about" name="about" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-        </div>
+    <!-- Navigation Dashboard -->
+    <div class="dashboard">
+        <button onclick="navigateTo('questionnaire.html')" class="nav-btn">Questionnaire</button>
+        <button onclick="navigateTo('chat-groups.html')" class="nav-btn">Chat Group</button>
+        <button onclick="signOut()" class="nav-btn">Sign Out</button>
+        <button onclick="navigateTo('credits.html')" class="nav-btn">Credits</button>
     </div>
-    <script src="dashboard.js"></script>
+
+    <script>
+        // Navigation function for each page
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+
+        // Sign out function
+        function signOut() {
+            window.location.href = 'index.html'; // Redirect to the signout page
+        }
+    </script>
 </body>
 </html>

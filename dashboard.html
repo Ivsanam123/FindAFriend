@@ -5,11 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
-    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        /* Background color for the page */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: royalblue;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Centered white box */
+        .dashboard-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Heading style */
+        .dashboard-container h1 {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: royalblue;
+        }
+
+        /* Button styling */
+        .nav-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: white;
+            background-color: royalblue;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            background-color: #1a1aff;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Dashboard -->
-    <div class="dashboard">
+    <!-- Centered White Box with Buttons -->
+    <div class="dashboard-container">
+        <h1>Dashboard</h1>
         <button onclick="navigateTo('questionnaire.html')" class="nav-btn">Questionnaire</button>
         <button onclick="navigateTo('chat-groups.html')" class="nav-btn">Chat Group</button>
         <button onclick="signOut()" class="nav-btn">Sign Out</button>
@@ -29,3 +78,4 @@
     </script>
 </body>
 </html>
+
